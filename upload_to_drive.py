@@ -6,9 +6,10 @@ from googleapiclient.http import MediaFileUpload
 from googleapiclient.discovery import build
 import os
 
+# Updated scopes to include both Google Sheets and Drive permissions
 SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
 ]
 
 
@@ -83,7 +84,7 @@ def save_spreadsheet_id(file_id):
 
 
 # Example usage:
-file_path = "placements.xlsx"  # Path to your uploaded Excel file
+file_path = "Super.xlsx"  # Path to your uploaded Excel file
 
 # Upload the Excel file to Google Sheets or use the existing file
 spreadsheet_id = upload_excel_to_sheets(file_path)
