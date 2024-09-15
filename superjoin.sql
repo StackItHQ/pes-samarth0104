@@ -9,7 +9,11 @@ CREATE TABLE internships (
 );
 
 Select * from internships;
+Select * from dynamic_table;
+-- drop table dynamic_table;
 INSERT INTO internships (id, company_name, job_title, cgpa_cutoff, remarks)
-VALUES (15, 'Google', 'Software Engineer', 9, 'Excellent opportunity');
+VALUES (20, 'super', 'Software Engineer', 9, 'Excellent opportunity');
+-- DELETE FROM dynamic_table
+-- WHERE id = 7;
 DELETE FROM internships
-WHERE id = 10;
+WHERE id = 7;
