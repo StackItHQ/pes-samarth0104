@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Create Internship</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+
+<body>
+    <h1>Create Internship</h1>
+    <form method="POST">
+        <label>Company Name</label><br>
+        <input type="text" name="company_name"><br>
+        <label>Job Title</label><br>
+        <input type="text" name="job_title"><br>
+        <label>CGPA Cut-off</label><br>
+        <input type="text" name="cgpa_cutoff"><br>
+        <label>Remarks</label><br>
+        <input type="text" name="remarks"><br>
+        <input type="submit" value="Create">
+    </form>
+</body>
+
+</html>
