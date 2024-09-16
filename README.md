@@ -62,6 +62,38 @@ All the best ✨.
 
 *Add your video here, and your approach to the problem (optional). Leave some comments for us here if you want, we will be reading this :)*
 
+## How To Run
+
+1. **Create a Virtual Environment (Optional but Recommended)**:
+   ```bash
+   python -m venv venv
+   ```
+2. **Activate the Virtual Environment**:
+   - On Windows:
+     ```bash
+     .\venv\Scripts\activate
+     ```
+   - On macOS/Linux:
+     ```bash
+     source venv/bin/activate
+     ```
+3. **Install Dependencies**:
+   Use `pip` to install all dependencies listed in `requirements.txt`:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. **Upload The Given Sheets (Super.xlsx) to Google Drive**:
+   Use the `uploadSheetToDrive.py` script to upload your Google Sheets file to Google Drive:
+   ```bash
+   python uploadSheetToDrive.py
+   ```
+
+5. **Run the Project**:
+   Execute the batch file to start the project:
+   ```bash
+   .\start.bat
+   ```
+
 ## Video
 [https://github.com/user-attachments/assets/a725162c-7967-4629-a725-d8e138ca12a3](https://github.com/user-attachments/assets/a725162c-7967-4629-a725-d8e138ca12a3)
 
@@ -93,6 +125,7 @@ All the best ✨.
 7. **Optimized the solution by syncing only changes**:
    - Implemented hashing to detect changes in data, reducing unnecessary sync operations.
    - Only updated Google Sheets or MySQL when data changes were detected.
+   - I know Mutex-Lock :).
 
 8. **Attempted dynamic schema creation for uploaded files**:
    - Tried to implement dynamic schema creation where uploading a new file would create a corresponding table in MySQL.
@@ -100,4 +133,11 @@ All the best ✨.
 
 9. **Developed a Flask frontend for easier CRUD operations**:
    - Simplified writing SQL queries by building a CRUD interface using Flask for better usability and faster operations.
+   - Was a pain to use SQL queries so made it simpler.
+
+## Extra 
+1. Initially, CRUD operations were mistakenly handled through Python code, but it was later realized that these operations can be directly managed within Google Sheets.
+2. The synchronization between Google Sheets and the database (both Sheets to DB and DB to Sheets) was implemented step by step and then merged.
+3. An attempt was made to dynamically create tables from Google Sheets. However, this failed due to issues with primary keys and data types, leading to duplicates and all fields being set as varchar. As a result, a single Google Sheet with a manually defined schema was used.
+4. Initially, periodic updates were implemented. This was later changed to an event-based system, where the solution looks for changes in real time.
 
