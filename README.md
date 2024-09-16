@@ -59,4 +59,44 @@ We're available at techhiring@superjoin.ai for all queries.
 All the best ✨.
 
 ## Developer's Section
+
 *Add your video here, and your approach to the problem (optional). Leave some comments for us here if you want, we will be reading this :)*
+
+## Video
+[https://github.com/user-attachments/assets/a725162c-7967-4629-a725-d8e138ca12a3](https://github.com/user-attachments/assets/a725162c-7967-4629-a725-d8e138ca12a3)
+
+## Approach to the Problem:
+
+1. **Started with OAuth and API enabling**:
+   - Set up OAuth authentication with Google Sheets API.
+   - Enabled necessary Google APIs for the project.
+
+2. **Created a file to upload to Google Drive**:
+   - Implemented file upload functionality to Google Drive for easier management of credentials and tokens.
+
+3. **Selected MySQL as the database**:
+   - Chose MySQL as the database to store and manage records, creating a structured relational data storage.
+
+4. **Implemented Sheets to DB synchronization as a separate functionality**:
+   - Developed a script to sync data from Google Sheets to MySQL database.
+   - Handled data insertions, updates, and deletions based on changes in Google Sheets.
+
+5. **Implemented DB to Sheets synchronization as a separate functionality**:
+   - Developed a script to sync data from MySQL to Google Sheets.
+   - Ensured that the data in Sheets reflects the latest information from the database.
+
+6. **Merged both synchronization functionalities with lock acquisition**:
+   - Combined both Sheets-to-DB and DB-to-Sheets synchronization processes.
+   - Used a mutex lock to avoid race conditions between the two sync operations.
+
+7. **Optimized the solution by syncing only changes**:
+   - Implemented hashing to detect changes in data, reducing unnecessary sync operations.
+   - Only updated Google Sheets or MySQL when data changes were detected.
+
+8. **Attempted dynamic schema creation for uploaded files**:
+   - Tried to implement dynamic schema creation where uploading a new file would create a corresponding table in MySQL.
+   - This attempt was not successful, and MongoDB would have been a better fit for this requirement.
+
+9. **Developed a Flask frontend for easier CRUD operations**:
+   - Simplified writing SQL queries by building a CRUD interface using Flask for better usability and faster operations.
+
