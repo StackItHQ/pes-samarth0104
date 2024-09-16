@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Internships</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+    <h1>Internships</h1>
+    <a href="{{ url_for('create') }}">Create New Internship</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Company Name</th>
+            <th>Job Title</th>
+            <th>CGPA Cut-off</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+        </tr>
+        {% for internship in internships %}
+        <tr>
+            <td>{{ internship.id }}</td>
+            <td>{{ internship.company_name }}</td>
+            <td>{{ internship.job_title }}</td>
+            <td>{{ internship.cgpa_cutoff }}</td>
+            <td>{{ internship.remarks }}</td>
+            <td>
+                <a href="{{ url_for('edit', id=internship.id) }}">Edit</a>
+                <form action="{{ url_for('delete', id=internship.id) }}" method="post" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
